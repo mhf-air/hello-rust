@@ -6,6 +6,7 @@ build = "build.rs"
 
 [dependencies]
 libc = "0.2"
+glium = "*"
 
 [build-dependencies]
 cc = "1.0"
