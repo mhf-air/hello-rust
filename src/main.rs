@@ -43,7 +43,7 @@ fn gl() {
   let indices = glium::index::NoIndices(glium::index::PrimitiveType::TrianglesList);
 
   let vertex_shader_src = r#"
-    #version 140
+    #version 450
 
     in vec2 position;
 
@@ -57,7 +57,7 @@ fn gl() {
   "#;
 
   let fragment_shader_src = r#"
-    #version 140
+    #version 450
 
     out vec4 color;
 
