@@ -28,16 +28,17 @@ fn gl() {
 
   implement_vertex!(Vertex, position);
 
-  let vertext1 = Vertex {
-    position: [-0.5, -0.5],
-  };
-  let vertext2 = Vertex {
-    position: [0.0, 0.5],
-  };
-  let vertext3 = Vertex {
-    position: [0.5, -0.25],
-  };
-  let shape = vec![vertext1, vertext2, vertext3];
+  let shape = vec![
+    Vertex {
+      position: [-0.5, -0.5],
+    },
+    Vertex {
+      position: [0.0, 0.5],
+    },
+    Vertex {
+      position: [0.5, -0.25],
+    },
+  ];
 
   let vertex_buffer = glium::VertexBuffer::new(&display, &shape).unwrap();
   let indices = glium::index::NoIndices(glium::index::PrimitiveType::TrianglesList);
