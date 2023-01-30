@@ -1,0 +1,11 @@
+import {
+	hello-rust..rx
+}
+
+main func() {
+	app := rx..App..new()
+	app.gen(rx..App..gen-full, "full", &{{"first", "second"}})
+
+	app.set-first("a".to-owned())
+	d,,(app.full)
+}

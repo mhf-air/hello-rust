@@ -1,0 +1,42 @@
+
+App+ struct {
+	first  string
+	second string
+
+	full string
+}
+
+App impl {
+	new+ func() App {
+		r := App {
+			first:  string..new()
+			second: string..new()
+			full:   string..new()
+		}
+		ret r
+	}
+
+	gen-full (&mut) func() {
+		s.full = format,,("{} {}", s.first, s.second)
+	}
+
+	// ----------------------------------------------------------------------
+	on-change (&mut) func(id &str) {
+	}
+
+	gen (&mut) func(f func(&mut App), target &str, deps &{{&str}}) {
+	}
+
+	set-first+ (&mut) func(new string) {
+		s.first = new
+		s.on-change("first")
+	}
+}
+
+Dag+ struct {
+}
+
+Dag-node struct {
+	id      string
+	targets Vec[string]
+}
